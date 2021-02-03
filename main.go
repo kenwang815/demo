@@ -5,6 +5,7 @@ import (
 
 	preparation "github/demo/init"
 	"github/demo/repository"
+	"github/demo/rest"
 	"github/demo/service"
 	"github/demo/utils/log"
 )
@@ -27,4 +28,8 @@ func main() {
 	if err != nil {
 		log.Error(err)
 	}
+
+	// Init rest
+	router := rest.Init()
+	router.Run(":8080")
 }
